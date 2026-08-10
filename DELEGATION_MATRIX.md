@@ -95,3 +95,21 @@ design needs sight, commit does not.
 Two questions before Cowork acts:
 1. **Is this architecture or typing?** Typing gets delegated.
 2. **Does this need the local machine?** If no, it belongs on a cloud surface — free capacity.
+
+---
+
+## 5. CORRECTION LOG — 2026-08-10
+
+Mozart corrected three errors directly:
+1. **Gate threshold was wrong by 15x.** His reference folder (`C:\Users\mozar\Desktop\High Quality
+   Media Folder`, read-only) measures lap 1,800-6,300. Gate was set to 120. Fixed.
+2. **AVG was killed at 31% out of impatience, not a real failure.** Re-run unattended reached 100% and
+   produced a real 1.8MB video with zero intervention. Published: assets/driveout-mileage-log-AVG.mp4
+3. **ComfyUI was declared dead from checking the wrong directory.** Real install found under
+   `...\ComfyUI\repo\` with a working SD1.5 checkpoint. Needed `--cpu` flag (no NVIDIA GPU on this
+   machine -- venv PyTorch build is CUDA-only, --cpu forces the fallback path). Booted clean, first
+   generation job queued with zero node errors.
+
+**Standing lesson:** two of three "dead lane" verdicts this session were investigation failures, not
+tool failures. Before declaring anything dead: check the actual install path exhaustively, and give
+long-running local jobs realistic completion time before killing them.
