@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "readbackType": "independent-delivery-fidelity",
+  "repository": "mozartg/mo-video-drops",
+  "evidenceSnapshotCommit": "f913ff3a176092eeb2d54a1e9ae9dc8b0211d1f2",
+  "pullRequest": {
+    "number": 2,
+    "head": "f913ff3a176092eeb2d54a1e9ae9dc8b0211d1f2",
+    "base": "65fe6e8aa5467e66516dda63f73d3ead3270b316",
+    "state": "open",
+    "draft": true,
+    "mergeable": false,
+    "combinedStatusCount": 0
+  },
+  "requiredDocumentation": [
+    "docs/DELIVERY_CERTIFICATION.md",
+    "docs/GITHUB_PR_TRIAGE.md",
+    "docs/CORE_FLOW_SHIP_GATE.md",
+    "docs/ASANA_MEDIA_PROJECT_MERGE_MAP.md",
+    "docs/BUILD_RECEIPT.md",
+    "docs/DRIVE_OUT_QUALITY_REVIEW_INDEX.md",
+    "CODEX_BRIEF.md"
+  ],
+  "artifacts": [
+    {
+      "id": "trial",
+      "relativePath": "remotion/out/trial.mp4",
+      "receiptPath": "remotion/out/trial-receipt.json",
+      "bytes": 7790495,
+      "sha256": "31921F00246EAB3561BE4227E4F1319BEF005F4179E12CEE6B5DB58C2D14C44D"
+    },
+    {
+      "id": "long-form",
+      "relativePath": "remotion/out/long-form.mp4",
+      "receiptPath": "remotion/out/long-form-artifact-receipt.json",
+      "bytes": 96524686,
+      "sha256": "D01A1323D95A0C95915EDFEDE69F142E81CC2DDC138BF3F06F3A7649158F52A1"
+    },
+    {
+      "id": "long-form-retry",
+      "relativePath": "remotion/out/long-form-retry.mp4",
+      "receiptPath": "remotion/out/long-form-retry-artifact-receipt.json",
+      "bytes": 96524686,
+      "sha256": "D01A1323D95A0C95915EDFEDE69F142E81CC2DDC138BF3F06F3A7649158F52A1"
+    },
+    {
+      "id": "drop-001",
+      "relativePath": "remotion/out/drops/drop-001.mp4",
+      "receiptPath": "remotion/out/drops/drop-001-receipt.json",
+      "bytes": 7652426,
+      "sha256": "21372714565609F41F3F6E923A3E2A4BCA9AA1F220AB4D5B54364DF375CAC26F"
+    },
+    {
+      "id": "drop-002",
+      "relativePath": "remotion/out/drops/drop-002.mp4",
+      "receiptPath": "remotion/out/drops/drop-002-receipt.json",
+      "bytes": 25614385,
+      "sha256": "C66BEF636A44AA975169667D845FE2C014CD347AD80A8266E70C12047E820BF7"
+    },
+    {
+      "id": "drop-003",
+      "relativePath": "remotion/out/drops/drop-003.mp4",
+      "receiptPath": "remotion/out/drops/drop-003-receipt.json",
+      "bytes": 15678508,
+      "sha256": "701F477373B5FA69C794A4CE6DD229EF101A2AEA35EB3F6AC5766D1431341639"
+    },
+    {
+      "id": "drop-004",
+      "relativePath": "remotion/out/drops/drop-004.mp4",
+      "receiptPath": "remotion/out/drops/drop-004-receipt.json",
+      "bytes": 18806304,
+      "sha256": "833570E69AB237DB49A91D5F3C376C89B48DA1E042E46682D8CE9870447D7DD2"
+    },
+    {
+      "id": "drop-005",
+      "relativePath": "remotion/out/drops/drop-005.mp4",
+      "receiptPath": "remotion/out/drops/drop-005-receipt.json",
+      "bytes": 22255655,
+      "sha256": "8FFC09105C84DBF6BBE9884B071EB92EF183C6694BC69E1A52FF80146ED44FC1"
+    }
+  ],
+  "verificationCommands": [
+    "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-readback.ps1",
+    "npm test",
+    "npm run typecheck",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-site.ps1"
+  ],
+  "knownLimits": [
+    "Artifact verification is local to the machine containing the ignored MP4 outputs.",
+    "No visual inspection or visual quality judgment is claimed.",
+    "No GitHub Actions status exists for the evidence head.",
+    "The PR is open and draft; mergeability is time-sensitive and must be refreshed before merge.",
+    "No public deployment or external URL verification is claimed.",
+    "A third-party assistant must run the verifier and inspect the evidence snapshot independently; this manifest is not an assistant signature."
+  ]
+}

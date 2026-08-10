@@ -1,0 +1,14 @@
+{
+  "title": "Drive Out: The Work Behind the Wheel",
+  "imagePaths": [
+    "drop-assets/stadium-crowd.png",
+    "drop-assets/drive-out-poster.png",
+    "drop-assets/sample-shots.png"
+  ],
+  "captions": [
+    { "text": "The workday is more than the trip on the screen.", "startFrame": 0, "endFrame": 150 },
+    { "text": "There is time, fuel, waiting, and recovery.", "startFrame": 150, "endFrame": 300 },
+    { "text": "Make the invisible work legible.", "startFrame": 300, "endFrame": 450 }
+  ],
+  "durationInFrames": 450
+}

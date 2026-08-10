@@ -64,3 +64,22 @@ live sources), a public destination page (**Codex** — needs repo + deploy), an
 Handing the legal research to Codex would produce fabricated citations, because it cannot reach the
 web to check them. Handing the page build to Work would produce a code block nobody deploys. The
 split follows the capability boundary, not a division of labour preference.
+
+---
+
+## Remotion build lane
+
+The deterministic video pipeline lives in `remotion/` and accepts JSON with a title, three or more repository-relative image paths, and timed captions.
+
+```powershell
+cd remotion
+npm install
+npm test
+npm run typecheck
+npm run render:trial
+npm run verify:trial
+npm run render:long-form
+npm run verify:long-form
+```
+
+`DriveOutTrial` is 15 seconds at 30 fps. `DriveOutLongForm` is 10 minutes at 30 fps. Rendered MP4s stay under `remotion/out/` and are not intended for GitHub because long-form output can exceed repository file limits.

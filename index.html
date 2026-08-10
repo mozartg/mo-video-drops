@@ -3,92 +3,222 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mo — Media Drops</title>
+<meta name="description" content="Drive Out: practical media for the work between the app and the bank.">
+<title>Drive Out | Know the work. Keep the proof.</title>
 <style>
-  :root { --bg:#0f1115; --card:#181b22; --line:#272b35; --text:#e8eaed; --dim:#9aa1ad; --ok:#3fb950; --warn:#d29922; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
-         font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  .wrap { max-width:1100px; margin:0 auto; padding:40px 20px 80px; }
-  h1 { font-size:30px; margin:0 0 6px; letter-spacing:-.02em; }
-  .sub { color:var(--dim); margin-bottom:32px; font-size:15px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-  video { width:100%; display:block; background:#000; aspect-ratio:9/16; object-fit:cover; }
-  .meta { padding:14px 16px 16px; }
-  .title { font-weight:600; font-size:15px; margin-bottom:8px; }
-  .tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
-  .tag { font-size:11px; padding:3px 8px; border-radius:20px; background:#20242d;
-         color:var(--dim); border:1px solid var(--line); }
-  .tag.pass { color:var(--ok); border-color:#1c3d24; background:#0e1f14; }
-  .dl { font-size:13px; color:#58a6ff; text-decoration:none; }
-  .dl:hover { text-decoration:underline; }
-  .section { margin:44px 0 18px; font-size:13px; text-transform:uppercase;
-             letter-spacing:.08em; color:var(--dim); border-bottom:1px solid var(--line); padding-bottom:8px; }
-  footer { margin-top:60px; color:var(--dim); font-size:13px; border-top:1px solid var(--line); padding-top:20px; }
-  code { background:#20242d; padding:2px 6px; border-radius:4px; font-size:13px; }
+  :root {
+    --ink: #172033;
+    --muted: #5e6879;
+    --paper: #f7f2e9;
+    --card: #fffdf8;
+    --line: #ded6c8;
+    --orange: #d85c35;
+    --orange-dark: #a83d22;
+    --blue: #173b59;
+    --green: #2d6654;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 10% 0%, rgba(216, 92, 53, .14), transparent 30rem),
+      linear-gradient(180deg, #fbf7ef 0%, var(--paper) 58%, #f0e8da 100%);
+    font: 16px/1.55 Georgia, "Times New Roman", serif;
+  }
+  a { color: inherit; }
+  .shell { max-width: 1120px; margin: 0 auto; padding: 22px 18px 70px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .brand { font: 700 15px/1.1 "Trebuchet MS", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+  .toplink { color: var(--muted); font: 700 12px/1 "Trebuchet MS", sans-serif; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+  .hero { padding: 82px 0 68px; max-width: 780px; }
+  .eyebrow { color: var(--orange-dark); font: 700 12px/1 "Trebuchet MS", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+  h1, h2, h3 { margin: 0; font-weight: 700; }
+  h1 { margin-top: 17px; font-size: clamp(3.1rem, 12vw, 6.8rem); line-height: .92; letter-spacing: -.065em; }
+  .hero-copy { max-width: 650px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.4rem); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: #fff; font: 700 13px/1 "Trebuchet MS", sans-serif; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
+  .button.alt { background: transparent; color: var(--blue); }
+  .signal-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 86px; }
+  .signal { padding: 18px; border-top: 2px solid var(--orange); color: var(--muted); font-size: 14px; }
+  .signal strong { display: block; margin-bottom: 4px; color: var(--ink); font: 700 13px/1.2 "Trebuchet MS", sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+  section { margin-top: 76px; }
+  .section-kicker { margin-bottom: 10px; color: var(--orange-dark); font: 700 12px/1 "Trebuchet MS", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+  h2 { max-width: 700px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.02; letter-spacing: -.04em; }
+  .section-copy { max-width: 660px; color: var(--muted); }
+  .floor-card { display: grid; grid-template-columns: 1.1fr .9fr; gap: 0; margin-top: 26px; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--card); box-shadow: 0 20px 50px rgba(23, 32, 51, .08); }
+  .floor-main { padding: 30px; background: var(--blue); color: #fff; }
+  .floor-main h3 { max-width: 400px; font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.02; }
+  .floor-main p { max-width: 430px; color: #dbe8ef; }
+  .floor-value { display: inline-block; margin-top: 22px; padding: 12px 16px; border: 1px solid rgba(255,255,255,.3); border-radius: 12px; color: #fff; font: 700 13px/1.3 "Trebuchet MS", sans-serif; letter-spacing: .08em; }
+  .floor-note { padding: 30px; }
+  .floor-note strong { color: var(--orange-dark); font: 700 13px/1.2 "Trebuchet MS", sans-serif; letter-spacing: .06em; }
+  .floor-note p { color: var(--muted); }
+  .drops { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  .drop { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: var(--card); }
+  video { display: block; width: 100%; aspect-ratio: 9/16; object-fit: cover; background: #111a27; }
+  .drop-meta { padding: 18px; }
+  .drop-meta h3 { font-size: 1.3rem; line-height: 1.05; }
+  .drop-meta p { min-height: 48px; color: var(--muted); font-size: 14px; }
+  .drop-link { color: var(--orange-dark); font: 700 12px/1 "Trebuchet MS", sans-serif; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+  .join { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: end; padding: 30px; border-radius: 24px; background: #ead9bf; }
+  .join h2 { font-size: clamp(2rem, 5vw, 3rem); }
+  .join p { color: var(--muted); }
+  .capture { display: grid; gap: 10px; }
+  label { font: 700 12px/1 "Trebuchet MS", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+  input { width: 100%; min-height: 50px; padding: 0 15px; border: 1px solid var(--line); border-radius: 10px; background: #fffdf8; color: var(--ink); font: 16px Georgia, serif; }
+  .capture button { min-height: 48px; border: 0; border-radius: 999px; background: var(--orange); color: #fff; font: 700 13px/1 "Trebuchet MS", sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+  .fine { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+  footer { margin-top: 76px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  footer strong { color: var(--ink); }
+  @media (max-width: 760px) {
+    .shell { padding-inline: 16px; }
+    .hero { padding-top: 64px; }
+    .signal-row, .floor-card, .drops, .join { grid-template-columns: 1fr; }
+    .signal-row { margin-bottom: 56px; }
+    .signal { padding: 14px 0; }
+    .floor-note { padding-top: 0; }
+    .drop-meta p { min-height: 0; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Media Drops</h1>
-  <div class="sub">Machine-generated, gate-verified short-form clips. Every asset here passed a sharpness gate (Laplacian variance &ge; 120) and an audio-speech gate before publication.</div>
+<main class="shell">
+  <header class="topbar">
+    <div class="brand">Drive Out</div>
+    <a class="toplink" href="#drops">Watch the drops</a>
+  </header>
 
-  <div class="section">Drive Out — vertical shorts</div>
-  <div class="grid">
-
-    <div class="card">
-      <video controls preload="metadata" src="assets/driveout-pay-floor-01.mp4"></video>
-      <div class="meta">
-        <div class="title">The pay floor most drivers never check</div>
-        <div class="tags">
-          <span class="tag pass">GATE PASS</span>
-          <span class="tag">1080&times;1920</span>
-          <span class="tag">Pexels stock</span>
-          <span class="tag">edge-tts</span>
-        </div>
-        <a class="dl" href="assets/driveout-pay-floor-01.mp4" download>Download MP4</a>
-      </div>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="eyebrow">A field guide for the miles between app and bank</div>
+    <h1 id="hero-title">Know the work.<br>Keep the proof.</h1>
+    <p class="hero-copy">Practical media for NY and WA rideshare drivers who want a clearer record of the work behind the wheel. Start with the receipts you already own.</p>
+    <div class="actions">
+      <a class="button" href="#drops">See the latest drops</a>
+      <a class="button alt" href="#join">Join the next release</a>
     </div>
+  </section>
 
-    <div class="card">
-      <video controls preload="metadata" src="assets/driveout-mileage-log-01.mp4"></video>
-      <div class="meta">
-        <div class="title">Your mileage log is evidence</div>
-        <div class="tags">
-          <span class="tag pass">GATE PASS</span>
-          <span class="tag">1080&times;1920</span>
-          <span class="tag">Pexels stock</span>
-          <span class="tag">edge-tts</span>
-        </div>
-        <a class="dl" href="assets/driveout-mileage-log-01.mp4" download>Download MP4</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <video controls preload="metadata" src="assets/driveout-pay-floor-longer.mp4"></video>
-      <div class="meta">
-        <div class="title">Pay floor — extended cut (31s)</div>
-        <div class="tags">
-          <span class="tag pass">GATE PASS</span>
-          <span class="tag">1080&times;1920</span>
-          <span class="tag">3 clips</span>
-          <span class="tag">Brian &minus;14%</span>
-        </div>
-        <a class="dl" href="assets/driveout-pay-floor-longer.mp4" download>Download MP4</a>
-      </div>
-    </div>
-
+  <div class="signal-row" aria-label="Drive Out audience">
+    <div class="signal"><strong>Built for the route</strong>Short, useful explainers for the workday.</div>
+    <div class="signal"><strong>NY / WA focus</strong>A destination for rideshare drivers in both states.</div>
+    <div class="signal"><strong>Proof over noise</strong>Keep the record close to the story.</div>
   </div>
 
+  <section aria-labelledby="floor-title">
+    <div class="section-kicker">The pay-floor explainer</div>
+    <h2 id="floor-title">A useful number needs a source attached.</h2>
+    <p class="section-copy">This page will carry the pay-floor explainer once ChatGPT Work supplies current, cited inputs. Until then, the destination stays honest and ready for the final fact check.</p>
+    <div class="floor-card">
+      <div class="floor-main">
+        <h3>What should a driver be able to count on?</h3>
+        <p>The answer belongs here only after the source, date, jurisdiction, and assumptions are visible.</p>
+        <span class="floor-value">PAY-FLOOR FIGURE PENDING SOURCED INPUT</span>
+      </div>
+      <div class="floor-note">
+        <strong>Publication gate</strong>
+        <p>No uncited figure is presented as a promise. Add the sourced number and citation before announcing this surface publicly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="drops" aria-labelledby="drops-title">
+    <div class="section-kicker">Published media drops</div>
+    <h2 id="drops-title">Start with the clips already in the wild.</h2>
+    <p class="section-copy">These published clips are linked from the existing media surface. This page is their destination, not a replacement for their publication receipts.</p>
+    <div class="drops">
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-pay-floor-01.mp4"></video>
+        <div class="drop-meta">
+          <h3>The pay floor most drivers never check</h3>
+          <p>Short-form explainer from the existing published lane.</p>
+          <a class="drop-link" href="assets/driveout-pay-floor-01.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-mileage-log-01.mp4"></video>
+        <div class="drop-meta">
+          <h3>Your mileage log is evidence</h3>
+          <p>A practical reminder to keep the record close.</p>
+          <a class="drop-link" href="assets/driveout-mileage-log-01.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-pay-floor-longer.mp4"></video>
+        <div class="drop-meta">
+          <h3>Pay floor: extended cut</h3>
+          <p>The longer version of the published short-form lane.</p>
+          <a class="drop-link" href="assets/driveout-pay-floor-longer.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-source-the-number.mp4"></video>
+        <div class="drop-meta">
+          <h3>Source the number</h3>
+          <p>A sourced figure starts with jurisdiction, date, and assumptions.</p>
+          <a class="drop-link" href="assets/driveout-source-the-number.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-keep-the-mileage-log.mp4"></video>
+        <div class="drop-meta">
+          <h3>Keep the mileage log</h3>
+          <p>Record the route while the day is still fresh.</p>
+          <a class="drop-link" href="assets/driveout-keep-the-mileage-log.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-start-with-what-you-own.mp4"></video>
+        <div class="drop-meta">
+          <h3>Start with what you own</h3>
+          <p>Turn the receipts already in your phone into a next step.</p>
+          <a class="drop-link" href="assets/driveout-start-with-what-you-own.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-work-behind-the-wheel.mp4"></video>
+        <div class="drop-meta">
+          <h3>The work behind the wheel</h3>
+          <p>Make waiting, fuel, and recovery legible in the record.</p>
+          <a class="drop-link" href="assets/driveout-work-behind-the-wheel.mp4" download>Download MP4</a>
+        </div>
+      </article>
+      <article class="drop">
+        <video controls preload="metadata" src="assets/driveout-keep-the-signal-close.mp4"></video>
+        <div class="drop-meta">
+          <h3>Keep the signal close</h3>
+          <p>Useful beats loud when the route is long.</p>
+          <a class="drop-link" href="assets/driveout-keep-the-signal-close.mp4" download>Download MP4</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="join" class="join" aria-labelledby="join-title">
+    <div>
+      <div class="section-kicker">Next release</div>
+      <h2 id="join-title">Keep the signal close.</h2>
+      <p>Leave an email to prepare the next release list. This repository has no capture backend yet, so the form is staged and will not send or store your address.</p>
+    </div>
+    <form class="capture" id="capture-form">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <button type="submit">Stage my interest</button>
+      <p class="fine" id="capture-status" role="status" aria-live="polite">Capture destination pending authorization.</p>
+    </form>
+  </section>
+
   <footer>
-    <strong>Quality gates applied.</strong> Sharpness: Laplacian variance &ge; 120 (rejects photographic blur).
-    Detail: histogram entropy &ge; 5.2 (rejects flat/solid frames). Audio: RMS &gt; &minus;50 dBFS and syllabic
-    modulation index &ge; 0.18 (rejects silence and synthetic tones).<br><br>
-    <strong>Licensing.</strong> Footage sourced from Pexels under the Pexels License (free commercial use, no
-    attribution required). Voice generated with Microsoft edge-tts. No AI-generated imagery is used in these
-    clips &mdash; generated-image licensing remains unresolved and is excluded from published work.
+    <strong>Quality gates applied to the existing published clips.</strong> Sharpness, detail, audio presence, and speech checks are recorded in the repository ledger. This page does not claim a visual review by Codex.<br><br>
+    <strong>Next authorization.</strong> Supply current cited pay-floor inputs and a capture destination before public announcement.
   </footer>
-</div>
+</main>
+<script>
+  document.getElementById("capture-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    document.getElementById("capture-status").textContent = "Staged only: no address was sent or stored.";
+  });
+</script>
 </body>
 </html>

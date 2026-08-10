@@ -1,0 +1,14 @@
+{
+  "title": "Drive Out: Keep the Mileage Log",
+  "imagePaths": [
+    "drop-assets/sample-shots.png",
+    "drop-assets/stadium-crowd.png",
+    "drop-assets/triumphant-goal.png"
+  ],
+  "captions": [
+    { "text": "The route is work. The log is evidence.", "startFrame": 0, "endFrame": 150 },
+    { "text": "Record the miles while the day is still fresh.", "startFrame": 150, "endFrame": 300 },
+    { "text": "Small receipts build a durable record.", "startFrame": 300, "endFrame": 450 }
+  ],
+  "durationInFrames": 450
+}

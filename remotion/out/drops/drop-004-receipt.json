@@ -1,0 +1,16 @@
+﻿{
+    "status":  "PASS",
+    "artifact":  "C:\\Users\\mozar\\Documents\\Codex\\2026-08-09\\standing-order-this-local-folder-is\\repo\\remotion\\out\\drops\\drop-004.mp4",
+    "bytes":  18806304,
+    "sha256":  "833570E69AB237DB49A91D5F3C376C89B48DA1E042E46682D8CE9870447D7DD2",
+    "composition":  {
+                        "id":  "DriveOutTrial",
+                        "width":  1080,
+                        "height":  1920,
+                        "fps":  30,
+                        "frames":  450,
+                        "durationSeconds":  15
+                    },
+    "visualInspection":  false,
+    "verifiedAtUtc":  "2026-08-10T08:47:54.9320379Z"
+}

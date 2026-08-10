@@ -1,0 +1,26 @@
+{
+  "title": "Drive Out: Keep Your Receipts",
+  "imagePaths": [
+    "trial-assets/drive-out-poster.png",
+    "trial-assets/drive-out-poster-2.png",
+    "trial-assets/sample-shots.png"
+  ],
+  "captions": [
+    {
+      "text": "Track the work. Keep the proof.",
+      "startFrame": 0,
+      "endFrame": 135
+    },
+    {
+      "text": "Drive Out is built for the miles between the app and the bank.",
+      "startFrame": 135,
+      "endFrame": 300
+    },
+    {
+      "text": "Start with the receipts you already own.",
+      "startFrame": 300,
+      "endFrame": 450
+    }
+  ],
+  "durationInFrames": 450
+}
