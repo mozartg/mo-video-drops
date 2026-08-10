@@ -1,82 +1,97 @@
-# SIX-SURFACE DELEGATION MATRIX
-**Issued 2026-08-09 · Owner: Mozart Guerrier · Director: Claude (Cowork)**
-**Constraint driving this document: weekly usage at 75%, session at 52%, on Opus 5 — the most
-expensive model in the fleet.**
+# SIX-SURFACE DELEGATION MATRIX — v2
+**Issued 2026-08-09 · Owner: Mozart Guerrier · Director: Claude (Cowork, Opus 5)**
+**v2 corrects a material error in v1: Claude Chat was described as having no tools. It has connectors,
+skills, web search, file uploads, vision, artifacts, and Projects. That error under-assigned the
+second-most-capable surface in the fleet.**
 
 ---
 
-## 0. The resource problem, stated plainly
+## 0. Model policy — corrected
 
-Mozart's standing global instruction: *"Always default to the cheapest model every time. If a model is
-not the cheapest, present a clear notice until it is changed."*
+v1 recommended dropping Cowork to Sonnet. **Mozart's pushback is correct and supersedes it:**
+*while running Opus 5 High, make architectural decisions.*
 
-That instruction has been violated for this entire session. Opus 5 has been running **executor** work —
-shell commands, file patches, git pushes, ffmpeg invocations — that a cheaper model performs
-identically. Opus earns its cost on **architecture, diagnosis, and judgment**, not on typing commands.
+The distinction v1 missed: the question is not "is Opus expensive" but **"is this turn producing
+architecture or typing?"** Opus on lane design, failure diagnosis, and routing decisions is the
+correct spend — those decisions propagate across five other surfaces and get executed for free.
+Opus running `git push` is waste.
 
-**Corrective policy, effective immediately:**
-
-| Work type | Model | Why |
+| Turn produces | Model | Rationale |
 |---|---|---|
-| Architecture, lane design, root-cause diagnosis, contradiction-hunting | **Opus** | Judgment is the product |
-| Pipeline execution, batch runs, file ops, publishing, gate runs | **Sonnet** | Identical output, fraction of cost |
-| Bulk mechanical passes, log triage, format conversion | **Haiku** | Volume work |
-| Anything ChatGPT/Codex can do in parallel | **Not Claude at all** | Free parallel capacity |
+| Architecture, routing, root-cause, contradiction-hunting | **Opus 5 High** | One decision here directs hours of free execution elsewhere |
+| Pipeline runs, file ops, publishing, batch execution | Sonnet | Identical output |
+| Bulk mechanical passes | Haiku | Volume |
+| Anything a free surface can do | **Delegate — not Claude at all** | Free parallel capacity |
 
-**The strategic error to avoid:** spending a scarce premium budget on work that a free or cheap surface
-would have absorbed. Delegation is a *cost* decision before it is a *capability* decision.
-
----
-
-## 1. Six surfaces, non-overlapping
-
-| # | Surface | Cost | Uniquely can | Uniquely cannot | Assignment |
-|---|---|---|---|---|---|
-| 1 | **Claude Chat** | Cheap | Long-form reasoning, writing, critique | No tools, no files, no repo | Scripts, narratives, red-teaming, spec review |
-| 2 | **Cowork (Claude)** | **Expensive** | MCP connectors + local files + shell + vision | Not built for long unattended refactors | **Direction + orchestration only** |
-| 3 | **Claude Code** | Metered separately | Terminal-native, long local builds, repo | No connector graph | **BLOCKED — token expired** |
-| 4 | **ChatGPT Chat** | Free/cheap | Sustained autonomous runs (4–8 h observed) with tooling open | No repo write | Long research runs, monitoring, drafting |
-| 5 | **ChatGPT Work** | Included | Live web, connectors, **vision**, Agent Mode | No repo, no terminal | Research, sourcing, captions, visual QA |
-| 6 | **Codex** | Included | Repo edit, run tests, open PRs | **No internet mid-task. No image input.** | Build, triage, specs |
-
-### The two structural blind spots that dictate routing
-- **Codex cannot browse while working** → all fact-finding goes to Work or ChatGPT Chat. Codex given
-  a research task fabricates citations with confidence.
-- **Codex cannot see images** → every visual judgment in a *media* company is off-limits to it.
-
-### The autonomy tactic (Mozart's finding, worth templating)
-ChatGPT Chat sustains 4–8 hours of autonomous work when prompted well **and the tooling stays open**.
-That is the cheapest continuous capacity in the fleet. It should carry long-running, low-judgment,
-high-duration work: monitoring, enumeration, drafting, research sweeps. **Do not spend Opus on
-anything ChatGPT Chat can run overnight for free.**
+**Rule:** Opus decides *what* and *why*. Cheaper surfaces do *how*.
 
 ---
 
-## 2. Current lane assignments
+## 1. Six surfaces — accurate capabilities
 
-| Surface | Owns now | Deliverable |
+| # | Surface | Has | **Cannot** |
+|---|---|---|---|
+| 1 | **Claude Chat** (claude.ai) | **Connectors (MCP), skills, web search, file upload, vision, artifacts, Projects w/ persistent knowledge base**, extended thinking | No local filesystem. No local shell. No persistent local repo state |
+| 2 | **Cowork (Claude)** | All of the above **plus** local file tools, sandboxed Linux shell, local machine control | Chat-shaped; not built for long unattended refactors. **Metered against the premium budget** |
+| 3 | **Claude Code** | Terminal-native, local repo, long builds, git, filesystem | No connector graph. **BLOCKED — OAuth token expired** |
+| 4 | **ChatGPT Chat** | Sustained autonomy (4–8 h observed with tooling open), browsing, files | No repo write |
+| 5 | **ChatGPT Work** | Live web, connectors, vision, Agent Mode, cross-app | No repo. No terminal |
+| 6 | **Codex** | Repo clone/edit, run tests, open PRs, git worktrees, local or cloud | **No internet during agent phase. No image input.** `AGENTS.md` truncates past 32 KiB |
+
+### What changes because of the correction
+
+**Claude Chat is the second-most-capable surface, not the least.** It can:
+- Run **Asana and GitHub connector work** directly — the reconciliation and triage tasks I routed to
+  Codex could run here instead, with better judgment and no sandbox blindness
+- **Build the Drive Out page as an artifact** — no repo needed to produce and iterate the HTML
+- **Hold persistent context in a Project** — the Drive Out knowledge base, the ledger, the fact sheet
+  all live there permanently instead of being re-pasted each session
+
+**The real dividing line is not "tools vs no tools." It is *local machine access*.**
+Only Cowork and Claude Code touch Mozart's filesystem. Everything else is cloud-side.
+That single axis explains the whole fleet.
+
+### Two structural blind spots that dictate routing
+- **Codex cannot browse mid-task** → fact-finding never goes to Codex; it fabricates citations.
+- **Codex cannot see images** → no visual judgment in a media operation. Structural, not stylistic.
+
+### The autonomy multiplier (Mozart's finding)
+ChatGPT Chat sustains 4–8 h autonomously with tooling open. **Claude Chat Projects is the analogous
+pattern on this side** — persistent knowledge base, connectors live. Both should carry long-duration
+work. Neither costs the premium budget.
+
+---
+
+## 2. Corrected lane assignments
+
+| Surface | Owns | Why this surface |
 |---|---|---|
-| **Cowork (Claude)** | Direction, lane architecture, gate calibration | This matrix; ledger upkeep |
-| **Claude Chat** | Video scripts for 10 shorts; red-team of the published clips | 10 scripts, ≤10s spoken each |
-| **Claude Code** | *(blocked)* Caption overlay system + batch runner | Needs `claude` login first |
-| **ChatGPT Chat** | Long autonomous run: enumerate free stock sources with commercial licences; build the rotation ledger | Source table w/ limits + licences |
-| **ChatGPT Work** | NY/WA pay-floor fact sheet w/ citations; captions; scheduler selection; visual QA | See `PROMPT_CHATGPT_WORK.md` |
-| **Codex** | Drive Out public surface; PR triage; Core Flow spec; Asana reconciliation | See `PROMPT_CODEX.md` |
+| **Cowork (Opus)** | Architecture, routing, gate calibration, ledger | Only surface with local machine + judgment premium |
+| **Claude Chat + Project** | **Asana reconciliation** (connector), **Drive Out page as artifact**, script production, red-teaming | Connectors + artifacts + persistent context, no premium burn |
+| **Claude Code** | Caption overlay system, batch runner, long local renders | *(blocked — needs `claude` login)* |
+| **ChatGPT Chat** | Overnight: free-stock source ledger, licence enumeration, monitoring | Cheapest sustained autonomy |
+| **ChatGPT Work** | NY/WA pay-floor citations, captions, scheduler selection, visual QA | Live web + vision + Agent Mode |
+| **Codex** | Repo build-out of the approved page, PR triage, Core Flow spec | Only surface that edits repos and opens PRs |
+
+**Notable re-route from v1:** Asana reconciliation moves **Codex → Claude Chat**. Codex would need the
+Asana API blind, with no ability to check docs mid-task. Claude Chat has the connector natively.
+**Codex should receive the page as an approved artifact and commit it**, rather than designing it —
+design needs sight, commit does not.
 
 ---
 
 ## 3. Blocking items
 
-1. **Claude Code — token expired.** `claude.exe` v2.1.187 installed and runs; returns
-   `401 OAuth access token has expired`. **Fix: run `claude` in a terminal, complete login.**
-   Until then surface 3 is dead and its work sits unassigned.
-2. **GitHub Actions billing-blocked** — no CI on any private repo.
-3. **Social accounts do not exist** — scheduler selection can proceed, activation cannot.
-4. **Long-form hosting unsolved** — GitHub caps at 100 MB; 10-min video runs 150–400 MB.
+1. **Claude Code — OAuth expired.** `claude.exe` v2.1.187 runs; returns `401 access token has expired`.
+   **Fix: run `claude` in a terminal, complete login.** Only Mozart can do this.
+2. **GitHub Actions billing-blocked** — no CI on private repos; absent checks ≠ passing.
+3. **Social accounts don't exist** — scheduler can be selected, not activated.
+4. **Long-form hosting unsolved** — GitHub caps 100 MB; 10-min video is 150–400 MB.
 
 ---
 
-## 4. Standing rule for the director role
+## 4. Standing rule for the director
 
-Before Cowork executes anything, answer: **"Can a cheaper or free surface do this?"**
-If yes, write the prompt and hand it off. Executing it here is the expensive mistake.
+Two questions before Cowork acts:
+1. **Is this architecture or typing?** Typing gets delegated.
+2. **Does this need the local machine?** If no, it belongs on a cloud surface — free capacity.
