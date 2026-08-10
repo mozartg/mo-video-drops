@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mo — Media Drops</title>
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --line:#272b35; --text:#e8eaed; --dim:#9aa1ad; --ok:#3fb950; --warn:#d29922; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:30px; margin:0 0 6px; letter-spacing:-.02em; }
+  .sub { color:var(--dim); margin-bottom:32px; font-size:15px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  video { width:100%; display:block; background:#000; aspect-ratio:9/16; object-fit:cover; }
+  .meta { padding:14px 16px 16px; }
+  .title { font-weight:600; font-size:15px; margin-bottom:8px; }
+  .tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .tag { font-size:11px; padding:3px 8px; border-radius:20px; background:#20242d;
+         color:var(--dim); border:1px solid var(--line); }
+  .tag.pass { color:var(--ok); border-color:#1c3d24; background:#0e1f14; }
+  .dl { font-size:13px; color:#58a6ff; text-decoration:none; }
+  .dl:hover { text-decoration:underline; }
+  .section { margin:44px 0 18px; font-size:13px; text-transform:uppercase;
+             letter-spacing:.08em; color:var(--dim); border-bottom:1px solid var(--line); padding-bottom:8px; }
+  footer { margin-top:60px; color:var(--dim); font-size:13px; border-top:1px solid var(--line); padding-top:20px; }
+  code { background:#20242d; padding:2px 6px; border-radius:4px; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Media Drops</h1>
+  <div class="sub">Machine-generated, gate-verified short-form clips. Every asset here passed a sharpness gate (Laplacian variance &ge; 120) and an audio-speech gate before publication.</div>
+
+  <div class="section">Drive Out — vertical shorts</div>
+  <div class="grid">
+
+    <div class="card">
+      <video controls preload="metadata" src="assets/driveout-pay-floor-01.mp4"></video>
+      <div class="meta">
+        <div class="title">The pay floor most drivers never check</div>
+        <div class="tags">
+          <span class="tag pass">GATE PASS</span>
+          <span class="tag">1080&times;1920</span>
+          <span class="tag">Pexels stock</span>
+          <span class="tag">edge-tts</span>
+        </div>
+        <a class="dl" href="assets/driveout-pay-floor-01.mp4" download>Download MP4</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" src="assets/driveout-mileage-log-01.mp4"></video>
+      <div class="meta">
+        <div class="title">Your mileage log is evidence</div>
+        <div class="tags">
+          <span class="tag pass">GATE PASS</span>
+          <span class="tag">1080&times;1920</span>
+          <span class="tag">Pexels stock</span>
+          <span class="tag">edge-tts</span>
+        </div>
+        <a class="dl" href="assets/driveout-mileage-log-01.mp4" download>Download MP4</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" src="assets/driveout-pay-floor-longer.mp4"></video>
+      <div class="meta">
+        <div class="title">Pay floor — extended cut (31s)</div>
+        <div class="tags">
+          <span class="tag pass">GATE PASS</span>
+          <span class="tag">1080&times;1920</span>
+          <span class="tag">3 clips</span>
+          <span class="tag">Brian &minus;14%</span>
+        </div>
+        <a class="dl" href="assets/driveout-pay-floor-longer.mp4" download>Download MP4</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>Quality gates applied.</strong> Sharpness: Laplacian variance &ge; 120 (rejects photographic blur).
+    Detail: histogram entropy &ge; 5.2 (rejects flat/solid frames). Audio: RMS &gt; &minus;50 dBFS and syllabic
+    modulation index &ge; 0.18 (rejects silence and synthetic tones).<br><br>
+    <strong>Licensing.</strong> Footage sourced from Pexels under the Pexels License (free commercial use, no
+    attribution required). Voice generated with Microsoft edge-tts. No AI-generated imagery is used in these
+    clips &mdash; generated-image licensing remains unresolved and is excluded from published work.
+  </footer>
+</div>
+</body>
+</html>
