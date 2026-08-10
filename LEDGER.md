@@ -201,3 +201,31 @@ found them a "trap door" -- fine for one asset, collapses under volume. Not bein
 - Local blocker receipt: https://drive.google.com/file/d/1O6G2XDYCK-J3CGMLYLLycTBuVak7CMxm/view?usp=drivesdk
 
 **Scale state:** The corrected nine-image canary pack is **VERIFIED_PASS**. A replacement 50-image portfolio is **NOT_YET_PRODUCED** and may scale only through the dual numeric-semantic promotion rule.
+
+---
+
+## 10. TURNKEY REVENUE MEDIA RELEASE FACTORY — 2026-08-10
+
+**Delivered:** A tested local state machine now converts the nine approved Core Power, Drive Out, and Stuck To Done canaries into dated revenue-facing release packages with captions, direct-message CTAs, alt text, hashes, provenance, calibrated QA, semantic review, copy red-team decisions, VSRR state, scenario planning, a calendar, and a visual review dashboard.
+
+**Verified production job:** `revenue-release-20260811-v4`
+
+- 9 planned / 9 promoted / 0 rejected
+- 9 unique hashes / 9 provenance receipts / 9 copy red-team passes
+- 0 missing packaged assets
+- 0 external publish flags
+- Schedule runs 2026-08-11 through 2026-08-19 across all three products
+
+**Scheduled execution:** Windows task `MoMediaRevenueReleaseFactory` is Ready. Canary result was 0; a second invocation skipped the completed job rather than duplicating it. Next run: 2026-08-16 at 06:10 America/New_York. Output lands in synced `G:\My Drive\Mo Media Factory\Ready to Post`.
+
+**Publisher truth boundary:** No authenticated social publisher was found after two distinct checks. Blocker `SOCIAL-PUBLISH-AUTH-001` is **PARKED**. The system continues creating `READY_TO_POST` packages and labels every external state `NOT_PUBLISHED`. Automatic publication requires a materially different route: connect one publisher and pass one canary post with a public URL receipt.
+
+**Receipts:**
+
+- Production release: https://drive.google.com/drive/folders/11cc3-wdCqQA-x4l13jvj-UYylsi7GQiO
+- System receipts: https://drive.google.com/drive/folders/1wV-KdxA6-o0zeoLGuzA-599v0BG7XTck
+- Turnkey receipt: https://drive.google.com/file/d/1HhuhsBlGKrwMJUsRFUgPwjf0VSonv5Bb/view?usp=drivesdk
+- Dashboard visual QA: https://drive.google.com/file/d/1kjzbp6CI9mAPJFVB6sI0J-gR2aU3FRHf/view?usp=drivesdk
+- Source: `media-ops/` in this repository
+
+**Verification:** 7 Python tests passed, PowerShell parser passed, Task Scheduler returned 0, dashboard rendered in headless Edge and passed visual inspection. The read-only High Quality Media Folder was not modified.
