@@ -100,3 +100,43 @@ unresolved upstream (pollinations/pollinations issue #8741). Prototyping only.
 5. Build n8n workflows as a *work tunnel*, not just delivery — templates over brute force.
 
 **Do not redo:** lane validation (done), gate calibration (done), ComfyUI (dead), AVG image gen (nonexistent).
+
+---
+
+## 7. CORRECTION — 2026-08-10: quality gate was miscalibrated, three lanes were wrongly written off
+
+**Root cause of every "PASS" video that Mozart rejected on sight:** the sharpness gate threshold was
+set to 120 based on my own bad output, never against Mozart's actual standard. He maintains a
+READ-ONLY reference folder: `C:\Users\mozar\Desktop\High Quality Media Folder`. Measured directly:
+
+| Reference file | Laplacian variance | Entropy |
+|---|---|---|
+| village_celebration.png | 6,341 | 7.82 |
+| triumphant_goal.png | 6,277 | 7.53 |
+| Drive Out Poster.png | 5,458 | 6.83 |
+| stadium_crowd.png | 4,772 | 7.48 |
+| Sample Shots.png (floor) | 1,847 | 7.21 |
+
+**Corrected thresholds: SHARP_MIN = 1800, ENTROPY_MIN = 6.5** (was 120 / 5.2). Applied in
+`C:\temp\claude-ops\sharpness_gate.py`. Every prior "PASS" video in this ledger scored 25-471 on
+this scale and would REJECT under the real standard. Pexels stock was previously called "the quality
+lane" at lap 471 -- that is 4x below the corrected floor and WRONG.
+
+**ChatGPT image generation matches the standard.** Mozart's reference files are literally named
+ChatGPT Image ....png and score 1,500-6,300. This is the image lane, not Pollinations.
+
+**Three lanes I wrote off too early, corrected:**
+- **AVG (Automated-Video-Generator):** NOT dead. Prior session killed a job at 31% out of impatience.
+  Re-run 2026-08-10 reached 62%+ unattended. Verdict pending completion, but "underestimated" per
+  Mozart's direct correction and the tool's own documentation.
+- **ComfyUI:** NOT an empty shell. Prior check inspected the wrong path. Real install found at
+  `C:\Users\mozar\TriggerCMD-Scripts\Tools\ComfyUI\repo\` -- full ComfyUI source, .venv with
+  Python, and a working checkpoint (1-5-pruned-emaonly-fp16.safetensors, 2GB, SD1.5). Launched
+  2026-08-10, verdict pending.
+- **n8n:** Confirmed genuinely failed -- Mozart reports ~3 weeks / ~100 hours sunk with no working
+  media output. This one stands as written off.
+
+**Runway / HeyGen / BlitzReels / Apixel:** Mozart reports ChatGPT already tested these at scale and
+found them a "trap door" -- fine for one asset, collapses under volume. Not being pursued further.
+
+**Cloudinary:** works intermittently per Mozart. Cloudflare available as a second host option, untested.
