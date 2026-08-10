@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "readbackType": "independent-delivery-fidelity",
   "repository": "mozartg/mo-video-drops",
-  "evidenceSnapshotCommit": "2da53c310dedec7cf63334539c837c58b015b816",
+  "evidenceSnapshotCommit": "e522ce395591566cff77d7c00ad3e3ff7c2f2d51",
   "pullRequest": {
     "number": 2,
-    "head": "2da53c310dedec7cf63334539c837c58b015b816",
+    "head": "e522ce395591566cff77d7c00ad3e3ff7c2f2d51",
     "base": "65fe6e8aa5467e66516dda63f73d3ead3270b316",
     "state": "open",
     "draft": true,
-    "mergeable": false,
+    "mergeable": true,
     "combinedStatusCount": 0
   },
   "requiredDocumentation": [
@@ -89,7 +89,7 @@
     "Artifact verification is local to the machine containing the ignored MP4 outputs.",
     "No visual inspection or visual quality judgment is claimed.",
     "No GitHub Actions status exists for the evidence head.",
-    "The PR is open and draft and GitHub reports mergeable=false.",
+    "The PR is open and draft; mergeability is time-sensitive and must be refreshed before merge.",
     "No public deployment or external URL verification is claimed.",
     "A third-party assistant must run the verifier and inspect the evidence snapshot independently; this manifest is not an assistant signature."
   ]

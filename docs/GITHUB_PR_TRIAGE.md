@@ -3,6 +3,8 @@
 Date: 2026-08-10
 Repository: https://github.com/mozartg/mo-video-drops
 
+Latest live reread: PR #2 head `e522ce3`.
+
 ## Current remote inventory
 
 These values were read from the live GitHub connector on 2026-08-10. They replace the historical counts in the brief for this repository only.
@@ -12,7 +14,7 @@ These values were read from the live GitHub connector on 2026-08-10. They replac
 | Open pull requests | 1: PR #2 | No merge or close executed |
 | Branches | 3: `main`, `agent/verified-drive-out-media-batch`, `chatgpt/prompt3-media-research-20260810` | No branch deleted |
 | GitHub checks on PR #2 head | Combined status returned no statuses | Untested; absence is not passing |
-| PR #2 mergeability after latest push | GitHub reports `mergeable=false`; base `main` is at `65fe6e8`, evidence head is `2da53c3` | REBASE candidate; do not merge until the branch is reconciled and rechecked |
+| PR #2 mergeability after latest push | Latest GitHub reread reports `mergeable=true`; base `main` is at `65fe6e8`, head is `e522ce3` | MERGE candidate after human review; keep draft and do not merge automatically |
 | Repository | Public, default branch `main`, merge permissions available | Keep review gate explicit |
 
 The brief's `27 open PRs / 19 branches` count and the five-repository MCLP-001 statement remain user-reported historical scope. They were not reproduced by the current search scoped to `mozartg/mo-video-drops`.
@@ -21,11 +23,11 @@ The brief's `27 open PRs / 19 branches` count and the five-repository MCLP-001 s
 
 | PR | Head | State | Recommendation | One-line justification |
 |---|---|---|---|---|
-| #2 | `agent/verified-drive-out-media-batch` | Open, draft, `mergeable=false`, 10 commits, 60 files | REBASE candidate after human review; keep draft now | The branch contains the verified media batch but is not currently mergeable against the newer `main`; checks are absent and deployment is not verified. |
+| #2 | `agent/verified-drive-out-media-batch` | Open, draft, `mergeable=true`, 14 commits, 64 files | MERGE candidate after human review; keep draft now | The branch contains the verified media batch and is currently mergeable, but checks are absent and deployment is not verified. |
 
 PR #2: https://github.com/mozartg/mo-video-drops/pull/2
 
-The branch's local merge base is `cf19181`. Remote `main` contains newer Prompt 3 commits through `65fe6e8`, so the PR is not up to date with its base. GitHub did not expose a conflict explanation in the returned metadata; no rebase was attempted. This table is an evidence snapshot for head `2da53c3`; later commits require a fresh readback.
+The branch's local merge base is `cf19181`. Remote `main` contains newer Prompt 3 commits through `65fe6e8`. Earlier reads returned `mergeable=false`; the latest live reread returned `mergeable=true`. Mergeability is time-sensitive and must be refreshed before any merge. No rebase or merge was attempted.
 
 ## Branch table
 

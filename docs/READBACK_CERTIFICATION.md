@@ -28,7 +28,7 @@ This packet is designed for a separate assistant or reviewer to validate the del
 | RT-002 | Prior GitHub triage named an older PR head and stale commit/file counts. | Corrected in `GITHUB_PR_TRIAGE.md` for snapshot `2da53c3`. |
 | RT-003 | The build receipt's global “no GitHub writes” statement conflicted with later PR and documentation pushes. | Narrowed to the initial build phase and recorded the later delivery writes. |
 | RT-004 | MP4 evidence is local and ignored by Git; a fresh clone cannot verify bytes without the local artifact set. | Explicitly retained as a local-artifact limit in the manifest. |
-| RT-005 | GitHub returned no CI statuses and `mergeable=false`. | Preserved as untested and rebase-candidate state; no green-check or merge claim is made. |
+| RT-005 | Earlier GitHub reads returned no CI statuses and `mergeable=false`, while the latest live reread returned no statuses and `mergeable=true`. | Preserved as time-sensitive remote state; CI remains untested and mergeability must be refreshed immediately before any merge. |
 | RT-006 | Codex cannot visually judge the media or certify aesthetic fidelity. | Explicit non-claim; third-party human or visual-capable review remains required. |
 
 ## Third-party affirmation protocol
