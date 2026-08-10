@@ -106,3 +106,14 @@ Not manual clicking, not brute force.
 
 - Drive Out clips are published and gate-passed at https://mozartg.github.io/mo-video-drops/ —
   they need a destination page to point at. That is Priority 1.
+
+---
+
+## CODEX STATE RECORD — 2026-08-10
+
+- Remotion trial and ten-minute long-form artifacts were rendered locally and receipt-verified; five additional Drive Out drops were rendered and receipt-verified.
+- Draft PR #2 is open on `agent/verified-drive-out-media-batch`; current live repository inventory is one open PR and three branches, not the historical 27/19 counts in this brief.
+- Current GitHub checks are absent, so the branch is locally verified but externally untested by CI. No merge, close, rebase, or branch deletion was performed.
+- Current Core Flow task state was read and converted into `docs/CORE_FLOW_SHIP_GATE.md`; it remains not ship-certified and still requires Mo's explicit approval.
+- Current Asana media project states were read and converted into `docs/ASANA_MEDIA_PROJECT_MERGE_MAP.md`; proposals preserve Media Factory as technical authority, Autonomous Media Factory as campaign queue, and Audit & Recovery as harvest-then-retire evidence.
+- Triage and current remote facts are recorded in `docs/GITHUB_PR_TRIAGE.md`.
