@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "readbackType": "independent-delivery-fidelity",
   "repository": "mozartg/mo-video-drops",
-  "evidenceSnapshotCommit": "e522ce395591566cff77d7c00ad3e3ff7c2f2d51",
+  "evidenceSnapshotCommit": "f913ff3a176092eeb2d54a1e9ae9dc8b0211d1f2",
   "pullRequest": {
     "number": 2,
-    "head": "e522ce395591566cff77d7c00ad3e3ff7c2f2d51",
+    "head": "f913ff3a176092eeb2d54a1e9ae9dc8b0211d1f2",
     "base": "65fe6e8aa5467e66516dda63f73d3ead3270b316",
     "state": "open",
     "draft": true,
-    "mergeable": true,
+    "mergeable": false,
     "combinedStatusCount": 0
   },
   "requiredDocumentation": [
