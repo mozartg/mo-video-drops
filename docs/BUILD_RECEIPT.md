@@ -17,7 +17,7 @@ Date: 2026-08-10
 
 ## Blocked
 
-The foreground `npm run render:long-form` attempt did not return a process status within the execution cell. A read-only process check later found no originating Node renderer process and no `remotion/out/long-form.mp4`. The wait was terminated to prevent an indefinite orphaned command. This is not a completed ten-minute render and is not reported as one.
+The first foreground `npm run render:long-form` attempt did not return a process status within the execution cell. A read-only process check later found no originating Node renderer process and no `remotion/out/long-form.mp4`. A second materially different retry used `--concurrency=4 --log=verbose` and a fresh `out/long-form-retry.mp4` path; it likewise produced no artifact or returned status. Both detached waits were terminated to prevent indefinite orphaned commands. This is not a completed ten-minute render and is not reported as one.
 
 ## Boundaries checked
 
