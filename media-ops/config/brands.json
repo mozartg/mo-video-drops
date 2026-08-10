@@ -1,0 +1,77 @@
+{
+  "schema": "mo-revenue-media-brands/v1",
+  "brands": {
+    "core-power": {
+      "display_name": "Core Power",
+      "time_local": "09:15",
+      "timezone": "America/New_York",
+      "platforms": ["Instagram", "TikTok", "YouTube Shorts"],
+      "cta": "DM CORE for private early access.",
+      "assets": [
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/core-power/core-power-canary-01.png",
+          "caption": "Hip tension can shape the whole day. Core Power is being built for discreet, fully clothed pelvic and hip practice without awkward explanations.",
+          "alt_text": "A fully clothed Black adult man practices a gentle hip and side stretch at home."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/core-power/core-power-canary-02.png",
+          "caption": "A private routine should fit real life. Core Power turns breathing, mobility, and symptom tracking into clear daily steps for men who want discretion.",
+          "alt_text": "An older East Asian man follows a private mobility routine beside a phone at home."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/core-power/core-power-canary-03.png",
+          "caption": "Support can be private and still be specific. Core Power connects guided pelvic and hip bodywork with boundaries, clarity, and practical next steps.",
+          "alt_text": "A fully clothed Latino man practices supported hip mobility with an older male bodywork professional."
+        }
+      ]
+    },
+    "drive-out": {
+      "display_name": "Drive Out",
+      "time_local": "12:10",
+      "timezone": "America/New_York",
+      "platforms": ["Instagram", "TikTok", "YouTube Shorts"],
+      "cta": "DM DRIVE for the driver evidence toolkit.",
+      "assets": [
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/drive-out/drive-out-canary-01.png",
+          "caption": "A shift is more than the fare. Drive Out helps drivers keep trips, miles, costs, and working conditions in one evidence trail.",
+          "alt_text": "An adult rideshare driver sits behind the wheel on a rainy day."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/drive-out/drive-out-canary-02.png",
+          "caption": "Fuel, tires, maintenance, and waiting time all shape the cost of a mile. Drive Out is designed to make that work visible.",
+          "alt_text": "An older driver checks a tire beside a car at an airport pickup area."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/drive-out/drive-out-canary-03.png",
+          "caption": "If you cannot reconstruct a shift, you cannot use it as evidence. Drive Out turns daily trip notes into an organized record.",
+          "alt_text": "An older Black woman driver records shift information inside her vehicle at night."
+        }
+      ]
+    },
+    "stuck-to-done": {
+      "display_name": "Stuck To Done",
+      "time_local": "18:20",
+      "timezone": "America/New_York",
+      "platforms": ["Instagram", "TikTok", "YouTube Shorts"],
+      "cta": "DM DONE for early access.",
+      "assets": [
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/stuck-to-done/stuck-to-done-canary-01.png",
+          "caption": "Before another restart, regulate. Stuck To Done gives ADHD and neurodivergent people a gentler way back into motion.",
+          "alt_text": "A tattooed adult sits calmly in a colorful room with a timer, notebook, and visible task tools."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/stuck-to-done/stuck-to-done-canary-02.png",
+          "caption": "Body doubling is support, not pressure. Stuck To Done helps make one next action visible while someone safe works nearby.",
+          "alt_text": "Two adults work together at a bright table using baskets, a notebook, and a timer."
+        },
+        {
+          "source": "outputs/media-rebuild-2026-08-10/final-canaries/stuck-to-done/stuck-to-done-canary-03.png",
+          "caption": "One finished step counts. Stuck To Done turns a crowded task field into a grounded sequence you can actually complete.",
+          "alt_text": "A Black woman holds one completed envelope in an organized creative workspace."
+        }
+      ]
+    }
+  }
+}
