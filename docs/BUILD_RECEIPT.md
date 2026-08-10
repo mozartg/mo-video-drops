@@ -19,6 +19,8 @@ Date: 2026-08-10
 
 The first foreground `npm run render:long-form` attempt did not return a process status within the execution cell. A read-only process check later found no originating Node renderer process and no `remotion/out/long-form.mp4`. A second materially different retry used `--concurrency=4 --log=verbose` and a fresh `out/long-form-retry.mp4` path; it likewise produced no artifact or returned status. Both detached waits were terminated to prevent indefinite orphaned commands. This is not a completed ten-minute render and is not reported as one.
 
+The required machine-control fallback was also exercised. CatDesk failed its MCP SSE probe with HTTP 404. TRIGGERcmd accepted job `20260810T045416567Z-05804062` for `npm run render:long-form`; a lookup using `id` returned `DONE|job_result|failed|3368281c734c|Invalid run or job ID.`, and a corrected `job_id` lookup returned `session=null`. No remote artifact receipt was returned, so this submission remains accepted-but-unverified.
+
 ## Boundaries checked
 
 - `LEDGER.md` was not modified.
@@ -27,6 +29,7 @@ The first foreground `npm run render:long-form` attempt did not return a process
 - No AI media generation, purchases, Asana writes, GitHub writes, or email sends were performed.
 - No pay-floor figure or citation was invented.
 - No GitHub Pages deployment or external URL verification is claimed.
+- CatDesk was attempted first; TRIGGERcmd was used as the fallback and its accepted job remains unverified.
 
 ## Remaining authorization gates
 
