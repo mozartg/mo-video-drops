@@ -1,0 +1,36 @@
+{
+  "title": "Drive Out: The Work Behind the Wheel",
+  "imagePaths": [
+    "trial-assets/drive-out-poster.png",
+    "trial-assets/drive-out-poster-2.png",
+    "trial-assets/sample-shots.png"
+  ],
+  "captions": [
+    {
+      "text": "The long route starts with a clear record.",
+      "startFrame": 0,
+      "endFrame": 1800
+    },
+    {
+      "text": "Every scene is driven by the same JSON contract.",
+      "startFrame": 1800,
+      "endFrame": 5400
+    },
+    {
+      "text": "Keep the story useful, specific, and grounded.",
+      "startFrame": 5400,
+      "endFrame": 9000
+    },
+    {
+      "text": "A durable workflow turns finished clips into a destination.",
+      "startFrame": 9000,
+      "endFrame": 12600
+    },
+    {
+      "text": "Drive Out: know the work, keep the proof.",
+      "startFrame": 12600,
+      "endFrame": 18000
+    }
+  ],
+  "durationInFrames": 18000
+}
