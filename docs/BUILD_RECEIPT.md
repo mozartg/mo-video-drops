@@ -29,7 +29,7 @@ The required machine-control fallback was also exercised. CatDesk failed its MCP
 - `LEDGER.md` was not modified.
 - The benchmark media folder was read-only; its files were copied as render inputs and not edited.
 - No `ffmpeg` command was invoked.
-- No AI media generation, purchases, Asana writes, GitHub writes, or email sends were performed.
+- During the initial build phase, no AI media generation, purchases, Asana writes, GitHub writes, or email sends were performed. The later delivery-certification phase did update and push the draft PR and commit supporting documentation; those writes are recorded in Git history and the PR link.
 - No pay-floor figure or citation was invented.
 - No GitHub Pages deployment or external URL verification is claimed.
 - CatDesk was attempted first and failed its MCP probe with HTTP 404. TRIGGERcmd was used as the fallback; its job receipt remained unverified, but the local artifact verification independently passed.
@@ -37,5 +37,5 @@ The required machine-control fallback was also exercised. CatDesk failed its MCP
 ## Remaining authorization gates
 
 1. Supply cited pay-floor data and a real capture destination before public announcement.
-2. Read live GitHub and Asana state before producing PR or task recommendations.
-3. Decide whether to host the 96.5 MB long-form artifact outside GitHub Pages before publishing it.
+2. Decide whether to host the 96.5 MB long-form artifact outside GitHub Pages before publishing it.
+3. Re-run the independent readback verifier after any branch rewrite, artifact replacement, or documentation change.

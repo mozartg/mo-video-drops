@@ -2,7 +2,9 @@
 
 Date: 2026-08-10
 Repository: https://github.com/mozartg/mo-video-drops
-Certified head: `d8f791d82f6821eaa6836dfd772f6a55135201c9`
+Evidence snapshot commit: `2da53c310dedec7cf63334539c837c58b015b816`
+
+This document records the evidence snapshot that the red-team readback checked. The independent readback packet is in `docs/READBACK_CERTIFICATION.md` and verifies the snapshot without trusting this document alone.
 
 ## Certified locally
 
@@ -21,7 +23,7 @@ Certified head: `d8f791d82f6821eaa6836dfd772f6a55135201c9`
 - Branch pushed: `agent/verified-drive-out-media-batch`.
 - Draft PR #2: https://github.com/mozartg/mo-video-drops/pull/2
 - PR state: open, draft, not merged.
-- PR head: `d8f791d82f6821eaa6836dfd772f6a55135201c9`.
+- PR head at the evidence snapshot: `2da53c310dedec7cf63334539c837c58b015b816`.
 - Current repository inventory: one open PR and three branches.
 - Combined GitHub status: no statuses returned. This is untested by CI, not passing.
 - GitHub currently reports `mergeable=false`; the branch is a rebase candidate against the newer `main`. No rebase or merge was performed.
