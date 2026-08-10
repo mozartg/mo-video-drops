@@ -142,3 +142,60 @@ ChatGPT Image ....png and score 1,500-6,300. This is the image lane, not Pollina
 found them a "trap door" -- fine for one asset, collapses under volume. Not being pursued further.
 
 **Cloudinary:** works intermittently per Mozart. Cloudflare available as a second host option, untested.
+
+
+---
+
+## 8. VSRR 2.0 TRACE — 2026-08-10
+
+**Protocol:** Diagnose -> Plan -> Fix -> Verify. The requested outcome is the mission; a blocked vendor route is not the same as an impossible outcome.
+
+### Verified conclusions
+
+- **Image batch:** 50 final PNGs are in Drive: 17 Drive Out, 17 Core Flow, 16 Stuck To Done. The authoritative score table was refreshed after strict prompt-gate review: every final row has Laplacian variance >= 1800 and entropy >= 6.8. Native ChatGPT image output measured 1.572-1.573 MP, below the requested 1.6 MP floor; this platform limitation is recorded rather than hidden.
+- **Replacement repair:** The original Stuck To Done rows 11, 13, and 14 were moved to a Drive rejection folder. Replacements were measured at Lap/entropy 3659.96/7.109912, 5244.47/7.332216, and 3733.19/7.373141.
+- **Cloudinary:** current connected-account usage receipt exposes a 100 MB video maximum. Cloudinary's official documentation describes chunked uploads for files over 100 MB, but the connected tool exposed no chunked local-file path. The 213,876,372-byte MP4 fixture was rejected on the local-path route, so no public 200 MB Cloudinary URL was claimed and the chunked route remains unverified here.
+- **Cloudflare:** authenticated API call to list R2 buckets returned error 10042: R2 must be enabled in the Cloudflare Dashboard. No bucket or upload was created. This is a feature-enablement blocker, not an auth failure.
+- **Alternative route:** the existing GitHub Pages site is live for the published page, but GitHub's 100 MB file cap and the connected Drive uploader's 100 MB transfer cap prevent treating it as a verified 200 MB video host. The tested boundary is therefore "no verified free 200 MB public host under the currently enabled routes," not universal impossibility.
+- **Drive Out fact sheet:** the existing Source Ledger was extended in-place with dated NY and WA rows. WA L&I's 2026 rates and July 1, 2026 record/receipt changes are verified. NYC TLC's March 1, 2026 rates are verified. NY non-NYC current operator pages publish $28.41/hour while the NY AG settlement page remains stale on historical dollar examples; the discrepancy is explicitly preserved.
+
+### Durable receipts
+
+- Image folder: https://drive.google.com/drive/folders/18cbODWTdc_6_bNHwe6w5Py92AouTQLHB
+- Score table: https://drive.google.com/file/d/18wdkXBZXWzWDDKgYI_ZBsxM1Y31U3HDJ/view?usp=drivesdk
+- Hosting test folder: https://drive.google.com/drive/folders/1yDOnC5u4YgAYC3gEYSYyB_mbyi14Z7jP
+- Source ledger workbook: https://docs.google.com/spreadsheets/d/1bdodhv6ou36Tvl--BVVELzJIueEijjXR5ErzB6sRqqo/edit
+- Cloudflare API receipt: R2 bucket listing error 10042 on 2026-08-10
+
+### Next route
+
+1. Use Cloudinary for assets <=100 MB or split/segment longer media; do not call it a verified 200 MB host.
+2. Enable R2 in the dashboard only if Mozart chooses that free-tier route, then rerun the same fixture through multipart upload and public delivery verification.
+3. Continue the campaign with the verified image and fact-sheet deliverables without waiting on hosting.
+
+
+---
+
+## 9. SEMANTIC MEDIA REBUILD CANARY — 2026-08-10
+
+**Truth correction:** The 50-image batch above passed its recorded numeric gate but is now **NUMERIC_PASS_SEMANTICALLY_SUPERSEDED**. It is not the accepted brand baseline. The production prompt required ChatGPT for the initial three-image trial; it did not require an exclusively ChatGPT-generated 50-image batch.
+
+**Corrected briefs:**
+- **Core Power:** discreet, fully clothed men's pelvic and hip wellness, including private support around frequent urination, erectile dysfunction, and erection quality. No sexualized imagery or outcome guarantees.
+- **Drive Out:** rideshare-driver trip, mileage, cost, and working-condition evidence. No uncited statement about what a driver is owed.
+- **Stuck To Done:** ADHD and neurodivergent movement from chaos or shutdown toward regulation, grounding, and realistic completion without shame.
+
+**Verified canary deliverable:** Nine 1080x1920 images, three per lane, passed both semantic review and the calibrated numeric gate. Sharpness range: **1805.79-2752.91**. Entropy range: **6.817881-7.209373**. Every image is **2.0736 MP**. Synthetic figures visible in Drive Out 03 were blurred before promotion.
+
+**Working route:** ChatGPT or licensed-stock source scene -> local composition, typography, factual cleanup, hashing, and calibrated QA. Two Pexels-derived assets retain source URLs in the provenance receipt.
+
+**Local-only route:** ComfyUI was tested twice at the real install with the real SD1.5 checkpoint. Default CPU attention and split CPU attention both ended in Windows fatal access violations. Persistent blocker: `LOCAL-COMFY-CPU-ACCESS-001`. Status: **PARKED_NO_VERIFIED_PATH_UNDER_CURRENT_CPU_RUNTIME**. Do not repeat unchanged.
+
+**Durable receipts:**
+- Rebuild folder: https://drive.google.com/drive/folders/1TepkRjhzFIklsTBXxJsVB7AaNoFN2AQE
+- Numeric scorecard: https://drive.google.com/file/d/1Pnzn10llt9xkH43-4d4qS_P43ccIqZYk/view?usp=drivesdk
+- Semantic/provenance scorecard: https://drive.google.com/file/d/1STNEt-aDEO73PnnV1a5XDGyrRjugIr9l/view?usp=drivesdk
+- Red-team report: https://drive.google.com/file/d/1TznEhjpdM1K4rsvDo_zLngG8C29N1IW1/view?usp=drivesdk
+- Local blocker receipt: https://drive.google.com/file/d/1O6G2XDYCK-J3CGMLYLLycTBuVak7CMxm/view?usp=drivesdk
+
+**Scale state:** The corrected nine-image canary pack is **VERIFIED_PASS**. A replacement 50-image portfolio is **NOT_YET_PRODUCED** and may scale only through the dual numeric-semantic promotion rule.
