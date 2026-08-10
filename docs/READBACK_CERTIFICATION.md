@@ -42,3 +42,9 @@ A separate assistant can affirm the package by:
 5. Returning a signed-style report with the snapshot commit, verifier result, artifact count, documentation count, and any disagreement.
 
 The packet is **READY_FOR_INDEPENDENT_AFFIRMATION**. It is not itself a third-party signature, and no visual-quality affirmation is implied.
+
+## Execution record
+
+- `scripts/verify-readback.ps1` ran on the clean workspace and returned `PASS`: 8 artifacts, 6 documentation files, unchanged `LEDGER.md`, and a clean working tree.
+- An independent assistant was dispatched for a separate readback, but it did not return within two bounded 120-second waits and was shut down. No third-party assistant affirmation is claimed.
+- Current affirmation state: **PENDING_INDEPENDENT_REVIEW**.
