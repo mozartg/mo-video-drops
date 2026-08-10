@@ -1,6 +1,8 @@
 # MEDIA PIPELINE LEDGER
 **Owner:** Mozart Guerrier · **Maintained by:** Claude (media lane) · **Readable by:** ChatGPT, Codex, TRIGGERcmd, CatDesk
-**Last updated:** 2026-08-09 · **Repo:** `mozartg/mo-video-drops` · **Live:** https://mozartg.github.io/mo-video-drops/
+**Last updated:** 2026-08-10 · **Repo:** `mozartg/mo-video-drops` · **Live:** https://mozartg.github.io/mo-video-drops/
+
+> **2026-08-10 RESCORE:** All published video assets were re-run through the corrected sharpness gate (SHARP_MIN 1800 / ENTROPY_MIN 6.5). All 4 assets (driveout-mileage-log-01, driveout-pay-floor-01, driveout-pay-floor-longer, driveout-mileage-cloudgen-EXPERIMENTAL) now score REJECT. Full scorecard: `SCORECARD_RESCORED_20260810.md` in this same folder. None deleted -- human review needed before treating any of them as still publishable.
 
 > Any agent picking up this work: read this file first. It is the state of truth.
 > Do not reconstruct history from conversation. Resume from `NEXT ACTIONS`.
