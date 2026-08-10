@@ -1,0 +1,49 @@
+{
+  "canary_id": "comfyui-sd15-512-v1",
+  "purpose": "Prove one real local ComfyUI generation before any orchestration promotion",
+  "install_mode": "existing-local-repo",
+  "repo_path": "C:\\Users\\mozar\\TriggerCMD-Scripts\\Tools\\ComfyUI\\repo",
+  "checkpoint": {
+    "repository": "https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5",
+    "filename": null,
+    "selection_rule": "Read the exact installed checkpoint filename and SHA-256 from the local probe; do not guess or download a replacement."
+  },
+  "preflight": [
+    "repo/main.py exists",
+    "an existing repo Python runtime exists",
+    "at least one checkpoint is enumerated with exact filename, size and SHA-256",
+    "port 8188 health state is recorded before start"
+  ],
+  "generation": {
+    "width": 512,
+    "height": 512,
+    "batch_size": 1,
+    "steps": 20,
+    "cfg": 7,
+    "sampler": "euler",
+    "scheduler": "normal",
+    "seed": 20260810,
+    "positive_prompt": "documentary photograph of a weathered wooden chair in an empty sunlit community hall, natural light, realistic texture",
+    "negative_prompt": "text, watermark, logo, duplicate objects, malformed geometry"
+  },
+  "required_evidence": [
+    "local preflight JSON",
+    "exact checkpoint filename and SHA-256",
+    "output image",
+    "API-format workflow JSON actually submitted",
+    "ComfyUI history result",
+    "console log",
+    "wall-clock elapsed time",
+    "SHA-256 of output image",
+    "media receipt JSON validated against contracts/media-receipt.schema.json"
+  ],
+  "pass_conditions": [
+    "existing ComfyUI process becomes healthy or is already healthy",
+    "exact enumerated checkpoint loads without fallback substitution",
+    "one 512x512 image is written",
+    "output is non-zero bytes",
+    "output SHA-256 is captured",
+    "receipt status is succeeded and QA is not_run or pass"
+  ],
+  "promotion_rule": "Do not add n8n, custom nodes, SDXL, video diffusion, batch generation, reinstall ComfyUI, or download a replacement checkpoint until this existing-install canary passes repeatedly."
+}

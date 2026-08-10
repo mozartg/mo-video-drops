@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mozartg.github.io/mo-video-drops/contracts/media-receipt.schema.json",
+  "title": "Media Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["job_id", "status", "artifact", "qa", "worker"],
+  "properties": {
+    "job_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["succeeded", "failed", "rejected"]},
+    "artifact": {
+      "type": "object",
+      "required": ["uri"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "mime_type": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "qa": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["pass", "fail", "not_run"]},
+        "profile": {"type": "string"},
+        "details_uri": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "worker": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string"},
+        "elapsed_ms": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "error": {
+      "type": ["object", "null"],
+      "properties": {
+        "code": {"type": "string"},
+        "message": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  }
+}
