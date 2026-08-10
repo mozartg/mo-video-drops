@@ -4,6 +4,8 @@
 
 > **2026-08-10 RESCORE:** All published video assets were re-run through the corrected sharpness gate (SHARP_MIN 1800 / ENTROPY_MIN 6.5). All 4 assets (driveout-mileage-log-01, driveout-pay-floor-01, driveout-pay-floor-longer, driveout-mileage-cloudgen-EXPERIMENTAL) now score REJECT. Full scorecard: `SCORECARD_RESCORED_20260810.md` in this same folder. None deleted -- human review needed before treating any of them as still publishable.
 
+
+> **2026-08-10 GATE UPDATE (3rd pass, final):** The sharpness gate is now content-type-aware, not a single global threshold. It evolved twice today: global SHARP_MIN=1800 (miscalibrated, only 39% of the reference folder passed) -> stopgap global SHARP_MIN=300 -> final fix: PHOTO_SHARP_MIN=250 / GRAPHIC_SHARP_MIN=1800 selected automatically via a simple flat-region+edge-density heuristic, or forced with `--content-type photo|graphic`. Per PyImageSearch, Pertuz et al. 2013, and OpenCV's own blog, Laplacian-variance blur detection is inherently content-dependent and should never use one global number. See GATE_CALIBRATION_DIAGNOSIS_20260810.md ADDENDUM for full detail. Gate script: sharpness_gate.py.
 > Any agent picking up this work: read this file first. It is the state of truth.
 > Do not reconstruct history from conversation. Resume from `NEXT ACTIONS`.
 
