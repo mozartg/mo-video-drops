@@ -1,0 +1,14 @@
+{
+  "title": "Drive Out: Start With What You Own",
+  "imagePaths": [
+    "drop-assets/drive-out-poster-2.png",
+    "drop-assets/village-celebration.png",
+    "drop-assets/drive-out-poster.png"
+  ],
+  "captions": [
+    { "text": "You do not need a perfect system to begin.", "startFrame": 0, "endFrame": 150 },
+    { "text": "Start with the receipts already in your phone.", "startFrame": 150, "endFrame": 300 },
+    { "text": "Then turn the record into a next step.", "startFrame": 300, "endFrame": 450 }
+  ],
+  "durationInFrames": 450
+}

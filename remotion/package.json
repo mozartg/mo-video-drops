@@ -34,7 +34,8 @@
     "verify:trial": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-trial.ps1",
     "render:long-form": "remotion render src/index.ts DriveOutLongForm out/long-form.mp4 --props=inputs/long-form.json --concurrency=12",
     "verify:long-form": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-long-form.ps1",
-    "verify:long-form-artifact": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-long-form-artifact.ps1"
+    "verify:long-form-artifact": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-long-form-artifact.ps1",
+    "render:batch": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/render-batch.ps1"
   },
   "sideEffects": [
     "*.css"

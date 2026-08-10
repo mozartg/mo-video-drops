@@ -6,6 +6,11 @@ $required = @(
   "assets/driveout-pay-floor-01.mp4",
   "assets/driveout-mileage-log-01.mp4",
   "assets/driveout-pay-floor-longer.mp4",
+  "assets/driveout-source-the-number.mp4",
+  "assets/driveout-keep-the-mileage-log.mp4",
+  "assets/driveout-start-with-what-you-own.mp4",
+  "assets/driveout-work-behind-the-wheel.mp4",
+  "assets/driveout-keep-the-signal-close.mp4",
   "capture-status"
 )
 

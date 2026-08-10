@@ -1,10 +1,10 @@
 param(
-  [string]$Artifact = (Join-Path $PSScriptRoot "..\out\trial.mp4"),
+  [string]$ArtifactPath = (Join-Path $PSScriptRoot "..\out\trial.mp4"),
   [string]$ReceiptPath = (Join-Path $PSScriptRoot "..\out\trial-receipt.json")
 )
 
 $ErrorActionPreference = "Stop"
-$resolvedArtifact = Resolve-Path -LiteralPath $Artifact -ErrorAction Stop
+$resolvedArtifact = Resolve-Path -LiteralPath $ArtifactPath -ErrorAction Stop
 $item = Get-Item -LiteralPath $resolvedArtifact
 
 if ($item.Length -le 0) {

@@ -1,0 +1,14 @@
+{
+  "title": "Drive Out: Keep the Signal Close",
+  "imagePaths": [
+    "drop-assets/triumphant-goal.png",
+    "drop-assets/village-celebration.png",
+    "drop-assets/drive-out-poster-2.png"
+  ],
+  "captions": [
+    { "text": "The next release should earn attention.", "startFrame": 0, "endFrame": 150 },
+    { "text": "Useful beats loud when the route is long.", "startFrame": 150, "endFrame": 300 },
+    { "text": "Know the work. Keep the proof.", "startFrame": 300, "endFrame": 450 }
+  ],
+  "durationInFrames": 450
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Drive Out: Source the Number",
+  "imagePaths": [
+    "drop-assets/drive-out-poster.png",
+    "drop-assets/drive-out-poster-2.png",
+    "drop-assets/sample-shots.png"
+  ],
+  "captions": [
+    { "text": "A useful number needs a source attached.", "startFrame": 0, "endFrame": 150 },
+    { "text": "Keep the jurisdiction, date, and assumptions visible.", "startFrame": 150, "endFrame": 300 },
+    { "text": "No promise without the proof.", "startFrame": 300, "endFrame": 450 }
+  ],
+  "durationInFrames": 450
+}
